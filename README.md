@@ -168,7 +168,6 @@ password: password123
 
 For a production application, a token-based solution (JWT / expiring access tokens / hashed passwords) would be recommended.
 
-Due to the limited timeframe of the assessment, a lightweight implementation was chosen.
 
 ---
 
@@ -199,7 +198,7 @@ No external database setup required.
 
 ## Notes
 
-This project was developed as a technical assessment with focus on:
+This project was developed with focus on:
 
 - REST API design
 - Database interaction
