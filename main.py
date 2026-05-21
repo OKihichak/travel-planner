@@ -343,14 +343,22 @@ def update_place(
 )
 def get_places(
     project_id: int,
+    visited: bool | None = None,
     db: Session = Depends(get_db)
 ):
 
-    return db.query(
+    query = db.query(
         models.ProjectPlace
     ).filter(
         models.ProjectPlace.project_id == project_id
-    ).all()
+    )
+
+    if visited is not None:
+        query = query.filter(
+            models.ProjectPlace.visited == visited
+        )
+
+    return query.all()
 
 
 @app.get(
